@@ -1,6 +1,6 @@
 # CSGO TERRAFORM
 
-## INSTALL 
+## Install 
 
 Make sure to install terraform. [link](https://learn.hashicorp.com/tutorials/terraform/install-cli).
 
@@ -9,7 +9,7 @@ Then run the following command inside the provider's folder of your choice (very
 $ terraform init
 ```
 
-## RUN
+## Deploy
 
 In order to run the scripts, each provider's folder comes with a **bin** folder containing some helpers to execute the usual terraform scripts. 
 
@@ -37,5 +37,22 @@ You must be located inside one of the providers to execute the following:
     ```bash
     $ ./bin/apply.sh /path/to/params.tfvar.json
     ```
-5. 
+
+We encourage you to execute the `plan` script before `apply`. 
+
+## Destroy
+
+You must be located inside one of the providers to execute the following:
+
+```bash
+$ ./bin/destroy.sh /path/to/params.tfvar.json
+```
+
+## Plan
+
+You must be located inside one of the providers to execute the following:
+
+```bash
+$ ./bin/plan.sh /path/to/params.tfvar.json
+```
 

@@ -21,11 +21,11 @@ resource "aws_key_pair" "key_pair" {
 
 resource "aws_instance" "server" {
   ami                         = var.ami_name
-  instance_type               = var.instance_type_worker
+  instance_type               = var.instance_type
   associate_public_ip_address = true
   vpc_security_group_ids      = [aws_security_group.sg.id]
   
-  key_name = var.key_pair
+  key_name = var.key_pair_name
 
   tags = {
     Name = var.name

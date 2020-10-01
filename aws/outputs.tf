@@ -1,3 +1,3 @@
-output "server public ip" {
-  value = alicloud_instance.server.public_ip
+output "server_public_ip" {
+  value = aws_instance.server.public_ip
 }
