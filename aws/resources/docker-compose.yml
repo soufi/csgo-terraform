@@ -1,0 +1,48 @@
+version: '3.8'
+
+volumes:
+  csgo-vol:
+    name: csgo-data
+    driver: local
+  portainer-vol:
+    name: portainer-data
+    driver: local
+
+services:
+  #https://hub.docker.com/r/cm2network/csgo
+  csgo:
+    container_name: csgo-dedicated
+    image: cm2network/csgo:latest
+    volumes:
+      - csgo-vol:/home/steam/csgo-dedicated/
+    environment:
+      SRCDS_TOKEN: ${TOKEN}
+      SRCDS_IP: ${IP}
+      SRCDS_NET_PUBLIC_ADDRESS: ${PUBLIC_IP}
+      SRCDS_HOSTNAME: ${HOSTNAME}
+      SRCDS_STARTMAP: ${MAP}
+      SRCDS_PW: ${PW}
+      SRCDS_RCONPW: ${RCONPW}
+      SRCDS_PORT: ${PORT}
+      SRCDS_TV_PORT: ${TV_PORT}
+      SRCDS_TICKRATE: 128
+      SRCDS_MAXPLAYERS: ${MAX_PLAYERS}
+      SRCDS_REGION: 3
+      SRCDS_MAPGROUP: "mg_active"
+      SRCDS_GAMETYPE: ${GAMETYPE}
+      SRCDS_GAMEMODE: ${GAMEMODE}
+      SRCDS_WARMUPTIME: 10
+    restart: unless-stopped
+    network_mode: host
+    
+  portainer:
+    image: portainer/portainer:latest
+    container_name: portainer
+    volumes:
+      - portainer-vol:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - "8000:8000"
+      - "9000:9000"
+    restart: unless-stopped
+  
