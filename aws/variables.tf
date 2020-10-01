@@ -4,8 +4,6 @@ variable secret_key {}
 
 variable region {}
 
-variable ec2 {}
-
 variable name {
   default = "csgo-server"
 }
@@ -52,15 +50,15 @@ variable csgo_map {
   default = "de_dust2"
 }
 
-variable MAX_PLAYERS {
+variable csgo_max_players {
   default = 10
 }
 
-variable GAMETYPE {
+variable csgo_gametype {
   default = 0
 }
 
-variable GAMEMODE {
+variable csgp_gamemode {
   default = 1
 }
 
@@ -71,3 +69,5 @@ variable "vpc_cidr" {
 variable key_pair_name {
   default = "csgo-server-key-pair"
 }
+
+variable public_key {}

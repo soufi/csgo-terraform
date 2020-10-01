@@ -3,3 +3,6 @@
 */params.tfvars.json
 
 
+*/.terraform
+*/terraform.tfstate*
+*/tf-data
