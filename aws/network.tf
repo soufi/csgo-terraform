@@ -7,6 +7,16 @@ resource "aws_security_group" "sg" {
   }
 }
 
+resource "aws_security_group_rule" "egress_traffic" {
+  type              = "egress"
+  from_port         = 0
+  to_port           = 0
+  protocol          = "-1"
+  cidr_blocks       = var.egress_cidr_blocks
+  security_group_id = aws_security_group.sg.id
+  description       = "Outbound"
+}
+
 resource "aws_security_group_rule" "ssh" {
   type              = "ingress"
   from_port         = 22

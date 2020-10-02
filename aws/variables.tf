@@ -75,3 +75,8 @@ variable key_pair_name {
 }
 
 variable public_key {}
+
+variable "egress_cidr_blocks" {
+  type = list(string)
+  default = ["0.0.0.0/0"]
+}
