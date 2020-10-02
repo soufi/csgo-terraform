@@ -1,5 +1,7 @@
 # CSGO TERRAFORM
 
+The formation deploys [CSGO](https://hub.docker.com/r/cm2network/csgo) using docker-compose. It also deploys [Portainer](https://hub.docker.com/r/portainer/portainer) to manage the containers.
+
 ## Install 
 
 Make sure to install terraform. [link](https://learn.hashicorp.com/tutorials/terraform/install-cli).
@@ -55,10 +57,6 @@ You must be located inside one of the providers to execute the following:
 ```bash
 $ ./bin/plan.sh /path/to/params.tfvar.json
 ```
-
-## Services
-
-The formation deploys [CSGO](https://hub.docker.com/r/cm2network/csgo) using docker-compose. It also deploys [Portainer](https://hub.docker.com/r/portainer/portainer) to manage the containers.
 
 ## Useful Links
 
