@@ -12,6 +12,10 @@ variable "ami_name" {
   default = "amzn2-ami-hvm-2.0.20200904.0-x86_64-gp2"
 }
 
+variable "ami_owner_id" {
+  default = "137112412989"
+}
+
 variable "instance_type" {
   default = "t2.medium"
 }

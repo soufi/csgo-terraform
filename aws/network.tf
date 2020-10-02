@@ -1,6 +1,6 @@
 resource "aws_security_group" "sg" {
   name   = var.name
-  vpc_id = join("", aws_vpc.vpc.*.id)
+  vpc_id = aws_vpc.vpc.id
 
   tags = {
     Name = "${var.name}-sg"

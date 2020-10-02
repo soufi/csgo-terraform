@@ -1,3 +1,13 @@
+data "aws_ami" "nodes" {
+  owners      = [var.ami_owner_id]
+  most_recent = true
+
+  filter {
+    name   = "name"
+    values = [var.ami_name]
+  }
+}
+
 data "template_file" "init_script" {
   template = file("${path.module}/resources/init.sh")
 
