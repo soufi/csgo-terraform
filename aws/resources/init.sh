@@ -42,3 +42,7 @@ MAX_PLAYERS=${csgo_max_players}
 GAMETYPE=${csgo_gametype}
 GAMEMODE=${csgp_gamemode}
 EOF
+
+# Run the Server
+cd /opt/csgo
+docker-compose up -d
