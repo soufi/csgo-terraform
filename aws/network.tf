@@ -29,8 +29,8 @@ resource "aws_security_group_rule" "ssh" {
 
 resource "aws_security_group_rule" "portainer" {
   type              = "ingress"
-  from_port         = 900
-  to_port           = 900
+  from_port         = 9000
+  to_port           = 9000
   protocol          = "tcp"
   cidr_blocks       = ["0.0.0.0/0"]
   security_group_id = aws_security_group.sg.id
